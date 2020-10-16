@@ -1,0 +1,32 @@
+ellipsis(w) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: w;
+}
+
+linear(direction = 90deg, from = $linear-from, to = $linear-to) {
+  background: linear-gradient(direction, from 0%, to 100%);
+}
+
+placeholder() {
+  &:-moz-placeholder {
+    {block};
+  }
+
+  &::-moz-placeholder {
+    {block};
+  }
+
+  &::-webkit-input-placeholder {
+    {block};
+  }
+
+  &:-ms-input-placeholder {
+    {block};
+  }
+
+  &:input-placeholder {
+    {block};
+  }
+}
