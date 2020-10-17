@@ -2,15 +2,13 @@
  * @Description  : vue全局组件、控件加载
  * @Author       : chenLiang
  * @Date         : 2020-09-16 16:08:20
- * @LastEditors  : chenLiang
- * @LastEditTime : 2020-09-16 16:08:54
+ * @LastEditors: chen<chenliang@itcast.cn>
+ * @LastEditTime: 2020-10-17 10:03:12
  */
 import Vue from 'vue';
 // import VConsole from 'vconsole';
 import Vant from 'vant';
 import 'vant/lib/index.css';
-import JSBridge from '@/common/jsBridge-plugin';
-import VueClipboard from 'vue-clipboard2';
 
 // if (process.env.VUE_APP_ENV !== 'prod') {
 //   VConsole();
@@ -38,5 +36,3 @@ Object.keys(components).forEach(key => {
 });
 
 Vue.use(Vant);
-Vue.use(JSBridge);
-Vue.use(VueClipboard);

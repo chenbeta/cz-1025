@@ -2,8 +2,8 @@
  * @Description  : 路由加载
  * @Author       : chenLiang
  * @Date         : 2020-09-16 16:07:00
- * @LastEditors  : chenLiang
- * @LastEditTime : 2020-09-16 16:07:08
+ * @LastEditors: chen<chenliang@itcast.cn>
+ * @LastEditTime: 2020-10-17 10:03:02
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -15,15 +15,6 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err);
 };
 
-//views 的公共路由
-const routerArr = [];
-
-const routerArrContext = require.context('../views', true, /module\.router\.js$/);
-
-routerArrContext.keys().forEach(key => {
-  routerArr.push(routerArrContext(key).default);
-});
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -32,7 +23,11 @@ const routes = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue')
   },
-  ...routerArr
+  {
+    path: '/diningRoom',
+    name: 'diningRoom',
+    component: () => import(/* webpackChunkName: "diningRoom" */ '../views/diningRoom.vue')
+  }
 ];
 
 const router = new VueRouter({

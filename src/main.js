@@ -2,8 +2,8 @@
  * @Description  : 加载主文件
  * @Author       : chenLiang
  * @Date         : 2020-09-16 16:07:15
- * @LastEditors  : chenLiang
- * @LastEditTime : 2020-09-17 13:56:11
+ * @LastEditors: chen<chenliang@itcast.cn>
+ * @LastEditTime: 2020-10-17 09:56:19
  */
 import Vue from 'vue';
 import axios, { $http } from '@/global/http';
@@ -24,7 +24,7 @@ Vue.prototype.$http = $http;
 Vue.prototype.axios = axios;
 
 const resizeEvent = () => {
-  let cale = window.screen.availWidth / 375;
+  let cale = window.screen.availWidth / 750;
   if (cale > 1) {
     cale = 1;
   }

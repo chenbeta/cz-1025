@@ -2,8 +2,8 @@
  * @Description  : 公共方法封装，已挂载到window上
  * @Author       : chenLiang
  * @Date         : 2020-09-16 16:11:15
- * @LastEditors  : chenLiang
- * @LastEditTime : 2020-09-16 16:36:46
+ * @LastEditors: chen<chenliang@itcast.cn>
+ * @LastEditTime: 2020-10-17 10:03:21
  */
 import { Toast, Dialog } from 'vant';
 
@@ -67,12 +67,10 @@ export const msgBox = (str, options = {}) => {
     showCancelButton: buttons.length > 1,
     confirmButtonText: buttons[0] || '确认',
     cancelButtonText: buttons[1] || '取消',
-    cancel() {
-      cancel();
-    },
-    confirm() {
-      yes();
-    },
     closed
+  }).then(() => {
+    yes();
+  }).catch(() => {
+    cancel();
   });
 };

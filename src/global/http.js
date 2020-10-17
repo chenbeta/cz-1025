@@ -2,14 +2,13 @@
  * @Description  : http请求封装
  * @Author       : chenLiang
  * @Date         : 2020-09-16 16:07:34
- * @LastEditors  : chenLiang
- * @LastEditTime : 2020-09-16 16:07:45
+ * @LastEditors: chen<chenliang@itcast.cn>
+ * @LastEditTime: 2020-10-17 10:01:16
  */
 import axios from 'axios';
 // import Qs from 'qs';
 import router from '@/router';
 import { msg } from '@/common/common';
-import Native from '@/common/native';
 import store from '@/store';
 
 let requestUrl = '/api_test/';
@@ -148,13 +147,6 @@ const request = options => {
     //显示错误信息，排除需要登录情况
     if (showErr && !serveData.success && serveData.code != '9998') {
       msg.error(serveData.msg);
-    }
-
-    //去登陆
-    if (!serveData.success && serveData.code === '9998') {
-      localStorage.token = ''; // token过期，移除token
-      // 进行重新登录操作
-      Native.getuser();
     }
 
     //需要loading时，_axiosLoading--
